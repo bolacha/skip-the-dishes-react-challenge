@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+
+import { Navbar, Nav, Grid, Row } from 'react-bootstrap';
+
+import { HomePage } from './pages/HomePage';
+import { FoodPage } from './pages/FoodPage';
+import { RestaurantPage } from './pages/RestaurantPage';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <div>
+            <Navbar>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        <a href="/">Skip the Line</a>
+                    </Navbar.Brand>
+                </Navbar.Header>
+                <Nav>
+
+                </Nav>
+            </Navbar>;
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path='/' component={HomePage}/>
+                    <Route path='/food' component={FoodPage}/>
+                    <Route path='/restaurant' component={RestaurantPage} />
+                    <Route path='/order' component={HomePage}/>
+                </Switch>
+            </BrowserRouter>
+        </div>
     );
   }
 }
