@@ -5,7 +5,15 @@ import { SearchComponent } from '../components/SearchComponent';
 import { Grid, Row } from 'react-bootstrap';
 
 
-export class HomePage extends Component {
+export class LogoutPage extends Component {
+
+    constructor(props) {
+        super(props);
+
+        localStorage.setItem('token', undefined);
+
+        this.props.history.push('/')
+    }
   render() {
     return (
         <Grid style={{width: '960px'}}>

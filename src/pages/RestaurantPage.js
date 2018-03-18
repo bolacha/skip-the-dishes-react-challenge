@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
 
-import { Navbar, Nav, Jumbotron, Grid, Row, Col, Panel } from 'react-bootstrap';
+import { Grid, Row, Col, Panel } from 'react-bootstrap';
 
 export class RestaurantPage extends Component {
 
